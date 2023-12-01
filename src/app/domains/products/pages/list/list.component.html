@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="text-3xl font-bold underline">
+        Products:
+    </h1>
+
+    <div class="grid grid-cols-3">
+        <app-product *ngFor="let item of products()"
+            [id]="item"
+            [price]="item*1000"
+            (onAddToCart)="addToCartHandler($event)"/>
+    </div>
+
+</div>
