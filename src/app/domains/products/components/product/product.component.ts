@@ -10,11 +10,12 @@ import { Component, EventEmitter, Input, Output, computed } from '@angular/core'
 export class ProductComponent {
   @Input({required:true}) id : number = 0;
   img = computed(()=> `https://picsum.photos/440/440?r=${this.id}`)
+  title = computed(()=> `Product ${this.id}`)
   @Input() price : number = 0;
-
+  
   @Output() onAddToCart = new EventEmitter<string>()
   
-  addtToCarHandler() {
+  addToCartHandler() {
     console.log("Agregando a", this.id)
     this.onAddToCart.emit( `Agregando a ${this.id}`)
   } 
