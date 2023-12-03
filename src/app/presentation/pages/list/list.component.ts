@@ -22,7 +22,7 @@ export class ListComponent {
     this.productsRepo.getAllProducts().subscribe({
       next: (products) => {
         console.log(products)
-        products.shift()
+        products.shift()// saco el primero porque tiene una imagen q no encaja
         this.products.set(products)
       },
       error:(err) => {
