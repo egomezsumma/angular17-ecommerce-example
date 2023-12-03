@@ -18,7 +18,8 @@
             </ul>
         </div>
         <div class="flex items-center">
-            <button class="px-4" (click)="toggleSideMenu()">
+            <button class="p-2 border rounded relative" (click)="toggleSideMenu()">
+                <div name="cart-badge" class="absolute -top-2 -left-4 rounded h-5 w-5 bg-black text-white text-sm">{{products().length}}</div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -42,7 +43,7 @@
     <!-- lista de productos -->
     <div class="pt-4 flex flex-col">
         <app-product-mini
-            *ngFor="let product of products" 
+            *ngFor="let product of products()" 
             [product]="product"></app-product-mini>
         <hr>
         <p>Total: {{total()}}</p>

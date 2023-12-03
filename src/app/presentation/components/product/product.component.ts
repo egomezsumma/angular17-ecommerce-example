@@ -14,10 +14,10 @@ export class ProductComponent {
   title = computed(()=> `Product ${this.id}`)
   @Input() price : number = 0;*/
   
-  @Output() onAddToCart = new EventEmitter<string>()
+  @Output() onAddToCart = new EventEmitter<Product>()
   
   addToCartHandler() {
     console.log("Agregando a", this.product.id)
-    this.onAddToCart.emit( `Agregando a ${this.product.id}`)
+    this.onAddToCart.emit(this.product)
   } 
 }

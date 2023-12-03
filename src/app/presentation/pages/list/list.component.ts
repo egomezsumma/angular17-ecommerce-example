@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ProductComponent } from '../../components/product/product.component';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../domain/product/product';
+import { CartRepositoryService } from '../../../data/repository/cart-repository.service';
 
 @Component({
   selector: 'app-list',
@@ -34,8 +35,10 @@ export class ListComponent {
       creationMs: new Date().toISOString()
     }
   ])
+  private cartRepo = inject(CartRepositoryService)
+  cart = this.cartRepo.products
 
-  addToCartHandler(msg: string) {
-    alert(msg)
+  addToCartHandler(product: Product) {
+    this.cartRepo.addToCart(product)
   }
 }

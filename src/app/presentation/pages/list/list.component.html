@@ -2,6 +2,8 @@
     <h1 class="text-3xl font-bold underline">
         Products:
     </h1>
+    
+    <p> cart in products: {{cart().length}}</p>
 
     <div class="grid grid-cols-3 gap-6">
         <app-product *ngFor="let product of products()"
