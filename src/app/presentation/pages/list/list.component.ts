@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { ProductComponent } from '../../components/product/product.component';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../../../domain/product/product';
+import { Product } from '../../../domain/product/product';
 
 @Component({
   selector: 'app-list',
