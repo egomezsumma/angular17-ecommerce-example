@@ -4,9 +4,8 @@
     </h1>
 
     <div class="grid grid-cols-3 gap-6">
-        <app-product *ngFor="let item of products()"
-            [id]="item"
-            [price]="item*1000"
+        <app-product *ngFor="let product of products()"
+            [product]="product"
             (onAddToCart)="addToCartHandler($event)"/>
     </div>
 
