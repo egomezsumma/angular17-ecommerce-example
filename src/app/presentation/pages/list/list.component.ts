@@ -22,6 +22,7 @@ export class ListComponent {
     this.productsRepo.getAllProducts().subscribe({
       next: (products) => {
         console.log(products)
+        products.shift()
         this.products.set(products)
       },
       error:(err) => {
