@@ -7,7 +7,7 @@ import { HeaderComponent } from './presentation/components/header/header.compone
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HeaderComponent],
-  template: '<app-header/><router-outlet/>'
+  template: '<app-header/><div class="container"><router-outlet/></div>'
 })
 export class AppComponent {
   title = 'store';
