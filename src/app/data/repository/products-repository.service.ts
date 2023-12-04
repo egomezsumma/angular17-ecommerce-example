@@ -13,4 +13,8 @@ export class ProductsRepositoryService {
   getAllProducts() {
     return this.http.get<Product[]>(this.GET_PRODUCTS_URL)
   }
+
+  getProductById(id:string) {
+    return this.http.get<Product>(this.GET_PRODUCTS_URL +`/${id}`)
+  }
 }
