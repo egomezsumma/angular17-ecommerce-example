@@ -1,15 +1,14 @@
-import { Component, Input, SimpleChange, inject, signal } from '@angular/core';
-import { Product } from '../../../domain/product/product';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductMiniComponent } from '../product-mini/product-mini.component';
 import { CartRepositoryService } from '../../../data/repository/cart-repository.service';
+import { RouterLinkWithHref, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, ProductMiniComponent],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  imports: [CommonModule, ProductMiniComponent, RouterLinkWithHref, RouterLinkActive],
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent {
   private cartRepo = inject(CartRepositoryService)
