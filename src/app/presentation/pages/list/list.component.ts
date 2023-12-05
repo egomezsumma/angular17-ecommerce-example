@@ -7,11 +7,11 @@ import { ProductsRepositoryService } from '../../../data/repository/products-rep
 import { Category } from '../../../domain/product/category';
 import { CategoryRepositoryService } from '../../../data/repository/category-repository.service';
 import { RouterLinkWithHref } from '@angular/router';
-
+import { EmptySpaceCardComponent } from '../../components/empty-space-card/empty-space-card.component';
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [ProductComponent, CommonModule, RouterLinkWithHref],
+  imports: [ProductComponent, CommonModule, RouterLinkWithHref, EmptySpaceCardComponent],
   templateUrl: './list.component.html'
 })
 export default class ListComponent {
@@ -58,6 +58,7 @@ export default class ListComponent {
       },
       error: (err) => {
         console.error(err)
+        this.products.set([])
       }
     })
   }

@@ -8,7 +8,8 @@
      <!-- Categories -->
      <div class="w-80">
         <ul>
-            <li routerLink="/">All</li>
+            <li><a routerLink="/">All</a></li>
+            <li><a routerLink="/" [queryParams]="{'category_id':'asas'}">FakeCategory</a></li>
             <li *ngFor="let category of categories()">
                 <a routerLink="/" 
                      [queryParams]="{'category_id':category.id}">{{category.name | titlecase}}</a>
@@ -17,12 +18,22 @@
     </div>
 
     <!-- Productos -->
-    <div class="grid grid-cols-3 gap-6 w-full">
+    <div *ngIf="products().length>0" class="grid grid-cols-3 gap-6 w-full">
         <div *ngFor="let product of products()">
             <app-product 
                 [product]="product" 
                 (onAddToCart)="addToCartHandler($event)"s/>
         </div>
     </div>
+
+    <div *ngIf="products().length<=0" class="w-full">
+        <app-empty-space-card 
+            [title]="'No products'" 
+            [subtitle]="'Nothing to see'"
+            [description]="'Sorry, we can\'t find products with those feature. You\'ll find lots to explore on the home page.'">
+
+        </app-empty-space-card>
+    </div>
+
 
 </div>
