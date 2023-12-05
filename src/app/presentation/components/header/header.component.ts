@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChange, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductMiniComponent } from '../product-mini/product-mini.component';
 import { CartRepositoryService } from '../../../data/repository/cart-repository.service';
